@@ -1,0 +1,30 @@
+#services img{
+    height: 150px;
+}
+
+/* Menambahkan margin-top untuk alert */
+.alert-custom {
+    margin-top: 70px; /* Sesuaikan dengan tinggi navbar */
+}
+
+.custom-bg{
+    background: rgb(212,148,144);
+background: linear-gradient(180deg, rgba(212,148,144,1) 0%, rgba(222,192,174,1) 69%);
+}
+
+.custom-bg1 {
+    background: rgb(212,148,144);
+background: linear-gradient(0deg, rgba(212,148,144,1) 0%, rgba(222,192,174,1) 69%);
+}
+
+.custom-btn {
+    background-color: #acb0cc;
+}
+
+.custom-bg2{
+    background-color: #dec0ae;
+}
+
+.custom-bg3{
+    background-color: #d49490;
+}
