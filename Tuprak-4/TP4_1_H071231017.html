@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No 1</title>
+</head>
+<body>
+    <script>
+    function countEvenNumbers(start, end) {
+    let count = 0;
+    let evenNumbers = [];
+    for (let i = start; i <= end; i+= 3) {
+        if (i % 2 == 0) {
+            evenNumbers.push(i);
+            count++;
+        }
+    }
+    console.log(`Jumlah Bilangan Genap: ${count} (${evenNumbers.join(", ")})`);
+    return count;
+}
+
+// inputan :
+countEvenNumbers(1, 10);
+    </script>
+</body>
+</html>

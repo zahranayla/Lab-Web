@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateFinalPrice() {
+            // Menerima input dari pengguna
+            const price = parseFloat(prompt("Masukkan harga barang:"));
+            const itemType = prompt("Masukkan jenis barang (Elektronik, Pakaian, Makanan, Lainnya):").toLowerCase();
+            let discountPercentage = 0;
+            switch (itemType) {
+                case 'elektronik':
+                    discountPercentage = 10;
+                    break;
+                case 'pakaian':
+                    discountPercentage = 20;
+                    break;
+                case 'makanan':
+                    discountPercentage = 5;
+                    break;
+                default:
+                    alert("Jenis barang tidak valid.");
+                    return; // Keluar dari fungsi jika jenis barang tidak valid
+            }
+
+            const discountAmount = (discountPercentage / 100) * price;
+            const finalPrice = price - discountAmount;
+        
+            // Menampilkan hasil
+            console.log(`Harga awal: Rp${price}`);
+            console.log(`Diskon: ${discountPercentage}%`);
+            console.log(`Harga setelah diskon: Rp${finalPrice}`);
+        }
+        
+        calculateFinalPrice();
+        
+    </script>
+</body>
+</html>
