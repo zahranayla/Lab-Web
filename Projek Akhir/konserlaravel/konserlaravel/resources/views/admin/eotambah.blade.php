@@ -1,0 +1,56 @@
+@extends('admin.templates.index')
+
+@section('page-content')
+    <div class="row">
+        <div class="col-md-12 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 bg-coklat">
+                    <h6 class="m-0 font-weight-bold text-white">Tambah EO</h6>
+                </div>
+                <div class="card-body">
+                     @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    {{-- Tampilkan alert sukses jika ada --}}
+                    @if (session('alert'))
+                        <div class="alert alert-success">
+                            {{ session('alert') }}
+                        </div>
+                    @endif
+
+                    <form method="post" action="{{ url('admin/eotambahsimpan') }}">
+                        @csrf
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="nama" name="nama" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telepon">Telepon</label>
+                            <input type="text" class="form-control" id="telepon" name="telepon" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label>
+                            <textarea class="form-control" id="alamat" name="alamat" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button class="btn btn-secondary" type="submit">Simpan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
